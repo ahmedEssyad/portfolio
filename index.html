@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohamed Essyad | Creative Developer</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+      // Replace your current triggerAccessDenied function with this improved version
+      function triggerAccessDenied() {
+        console.log("Access denied function triggered");
+        
+        // Get the modal
+        const modal = document.getElementById('accessDeniedModal');
+        
+        if (modal) {
+          console.log("Modal found, setting display");
+          
+          // CRITICAL FIX: Force the modal to be fixed in the current viewport
+          // regardless of scroll position
+          modal.style.position = 'fixed';
+          modal.style.top = '0';
+          modal.style.left = '0';
+          modal.style.right = '0';
+          modal.style.bottom = '0';
+          modal.style.display = 'flex';
+          modal.style.alignItems = 'center';
+          modal.style.justifyContent = 'center';
+          modal.style.visibility = 'visible';
+          modal.style.opacity = '1';
+          modal.style.zIndex = '9999';
+          
+          // Add a class that forces display
+          modal.classList.add('modal-visible');
+          
+          // Make sure the modal content is visible
+          const modalContent = modal.querySelector('.modal-content');
+          if (modalContent) {
+            modalContent.style.position = 'relative';
+            modalContent.style.display = 'block';
+            modalContent.style.visibility = 'visible';
+            modalContent.style.opacity = '1';
+            modalContent.style.maxHeight = '90vh';
+            modalContent.style.overflow = 'auto';
+            modalContent.style.margin = 'auto';
+          }
+          
+          // Make sure the contact suggestion is visible
+          const contactSuggestion = modal.querySelector('.contact-suggestion');
+          if (contactSuggestion) {
+            contactSuggestion.style.display = 'block';
+            contactSuggestion.style.visibility = 'visible';
+          }
+          
+          // Animate terminal output lines sequentially
+          const outputLines = document.querySelectorAll('.terminal-output .output-line');
+          outputLines.forEach((line, index) => {
+            setTimeout(() => {
+              line.classList.add('active');
+            }, 300 * index);
+          });
+          
+          // Create a function to close the modal
+          function closeModal() {
+            modal.style.display = 'none';
+            modal.classList.remove('modal-visible');
+          }
+          
+          // Add a click handler to close the modal
+          const closeBtn = modal.querySelector('.modal-close');
+          if (closeBtn) {
+            closeBtn.onclick = function(e) {
+              e.stopPropagation();
+              closeModal();
+            };
+          }
+          
+          // Also allow clicking outside the modal to close it
+          modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+              closeModal();
+            }
+          });
+          
+          console.log("Modal style applied:", modal.style.display);
+        } else {
+          console.error("Modal element not found!");
+        }
+        
+        // Prevent default link behavior
+        return false;
+      }
+    </script>
+  </head>
+  <body>
+    
+
+    <header id="home">
+      <div class="header-content">
+        <h1 class="glitch" data-text="Mohamed Essyad">Mohamed Essyad</h1>
+        <div class="terminal-text">$ echo "Creative Full-Stack Developer"</div>
+        
+      </div>
+      <div class="cv-download-container">
+        <div class="cv-download-button">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="terminal-title">install_cv.sh</div>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">$ <span class="typing-text">curl -O https://محمد-اسياد.com/cv.pdf</span></div>
+            <div class="terminal-line progress-line">
+              <div class="progress-text">Downloading...</div>
+              <div class="progress-bar"><div class="progress-fill"></div></div>
+            </div>
+            <div class="terminal-line success-line">Installation complete! <span class="blink">█</span></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="show">
+        <div class="nav-container">
+          <div class="nav-toggle" id="navToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="index-ar.html" class="nav-link">العربية</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-image card-3d">
+          <img src="./images/WhatsApp Image 2025-03-12 à 02.02.26_60568687.jpg" alt="Mohamed Essyad< profile photo" />
+        </div>
+        <div class="about-text">
+            <p>
+                Welcome to my world of digital innovation! I am Mohamed Essyad, a creative full-stack developer and problem solver, passionate about transforming ideas into functional, visually compelling web applications.
+              </p>
+              <p>
+                Based in Nouakchott, Mauritania, I am currently a student at Supnum and a developer at Dazrim. My work revolves around pushing the boundaries of digital interactivity and automation.
+              </p>
+          <div class="bio-item">
+            <span class="bio-icon">🌍</span>
+            <span>Based in Nouakchott, Mauritania</span>
+          </div>
+          <div class="bio-item">
+            <span class="bio-icon">🎓</span>
+            <span>Student in Supnum</span>
+          </div>
+          <div class="bio-item">
+            <span class="bio-icon">💼</span>
+            <span>Developer at Dazrim</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Skills Matrix</h2>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3>Web Scraping & Automation </h3>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Scrapy</span>
+              <span>92%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 92%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Selenium</span>
+              <span>88%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 88%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Requests</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>BeautifulSoup</span>
+              <span>80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Frontend Mastery</h3>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>React / Node.js</span>
+              <span>95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 95%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>JavaScript</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>CSS/Bootstrap</span>
+              <span>87%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 87%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Framer Motion </span>
+              <span>82%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 82%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Backend Systems</h3>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Node.js/Express</span>
+              <span>88%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 88%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Django</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>MySQL</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>MongoDB</span>
+              <span>80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Featured Works</h2>
+      <div class="projects-grid">
+        <!-- Project Card 1 -->
+        <div class="project-terminal">
+          <div class="terminal-header">
+            <div class="terminal-controls">
+              <span class="control close"></span>
+              <span class="control minimize"></span>
+              <span class="control expand"></span>
+            </div>
+            <div class="terminal-title">project_1.sh</div>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-content">
+              <div class="command-line"><span class="prompt">$&gt;</span> <span class="command">load_project</span> <span class="param">Blog</span></div>
+              <div class="response">
+                <div class="project-image">
+                  <img src="./images/firstProject.png" alt="Blog Project" />
+                  <div class="image-overlay">
+                    <div class="scan-line"></div>
+                  </div>
+                </div>
+                <div class="project-data">
+                  <div class="data-line"><span class="key">PROJECT_NAME:</span> <span class="value">E-commerce Web Application</span></div>
+                  <div class="data-line"><span class="key">DESCRIPTION:</span> <span class="value">A next-generation online Blog with dynamic Book,Articlesm,Quotes and Authors management .</span></div>
+                  <div class="data-line"><span class="key">TECH_STACK:</span> <span class="value tags">
+                    <span class="tag">React</span>
+                    <span class="tag">Express</span>
+                    <span class="tag">MongoDB</span>
+                  </span></div>
+                </div>
+              </div>
+              <div class="command-line"><span class="prompt">$&gt;</span> <span class="command">open</span> <span class="param">demo</span></div>
+              <div class="terminal-links">
+                <a href="javascript:void(0)" onclick="triggerAccessDenied(); return false;" class="terminal-link demo-link" data-action="demo" data-project="e-commerce">View Project</a>
+                <a href="javascript:void(0)" onclick="triggerAccessDenied(); return false;" class="terminal-link source-link" data-action="source" data-project="e-commerce">Source Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Project Card 2 -->
+        <div class="project-terminal">
+          <div class="terminal-header">
+            <div class="terminal-controls">
+              <span class="control close"></span>
+              <span class="control minimize"></span>
+              <span class="control expand"></span>
+            </div>
+            <div class="terminal-title">project_2.sh</div>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-content">
+              <div class="command-line"><span class="prompt">$&gt;</span> <span class="command">load_project</span> <span class="param">smart-catalog</span></div>
+              <div class="response">
+                <div class="project-image">
+                  <img src="./images/admin.png" alt="Smart Product Catalog" />
+                  <div class="image-overlay">
+                    <div class="scan-line"></div>
+                  </div>
+                </div>
+                <div class="project-data">
+                  <div class="data-line"><span class="key">PROJECT_NAME:</span> <span class="value">Smart Product Catalog </span></div>
+                  <div class="data-line"><span class="key">DESCRIPTION:</span> <span class="value">An advanced digital catalog With two interfaces powered by data extraction and automation.</span></div>
+                  <div class="data-line"><span class="key">TECH_STACK:</span> <span class="value tags">
+                    <span class="tag">React</span>
+                    <span class="tag">Django</span>
+                    <span class="tag">REST API</span>
+                  </span></div>
+                </div>
+              </div>
+              <div class="command-line"><span class="prompt">$&gt;</span> <span class="command">open</span> <span class="param">demo</span></div>
+              <div class="terminal-links">
+                <a href="javascript:void(0)" onclick="triggerAccessDenied(); return false;" class="terminal-link demo-link" data-action="demo" data-project="smart-catalog">View Project</a>
+                <a href="javascript:void(0)" onclick="triggerAccessDenied(); return false;" class="terminal-link source-link" data-action="source" data-project="smart-catalog">Source Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Project Card 3 -->
+        <div class="project-terminal">
+          <div class="terminal-header">
+            <div class="terminal-controls">
+              <span class="control close"></span>
+              <span class="control minimize"></span>
+              <span class="control expand"></span>
+            </div>
+            <div class="terminal-title">project_3.sh</div>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-content">
+              <div class="command-line"><span class="prompt">$&gt;</span> <span class="command">load_project</span> <span class="param">tourism-platform</span></div>
+              <div class="response">
+                <div class="project-image">
+                  <img src="./images/tor.png" alt="Tourism Website" />
+                  <div class="image-overlay">
+                    <div class="scan-line"></div>
+                  </div>
+                </div>
+                <div class="project-data">
+                  <div class="data-line"><span class="key">PROJECT_NAME:</span> <span class="value">Tourism Website</span></div>
+                  <div class="data-line"><span class="key">DESCRIPTION:</span> <span class="value">A visually stunning tourism platform showcasing destinations with an engaging user experience.</span></div>
+                  <div class="data-line"><span class="key">TECH_STACK:</span> <span class="value tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">PHP</span>
+                  </span></div>
+                </div>
+              </div>
+              <div class="command-line"><span class="prompt">$&gt;</span> <span class="command">open</span> <span class="param">demo</span></div>
+              <div class="terminal-links">
+                <a href="javascript:void(0)" onclick="triggerAccessDenied(); return false;" class="terminal-link demo-link" data-action="demo" data-project="tourism-platform">View Project</a>
+                <a href="javascript:void(0)" onclick="triggerAccessDenied(); return false;" class="terminal-link source-link" data-action="source" data-project="tourism-platform">Source Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Modal for restricted projects -->
+    <!-- If your modal isn't appearing, you can check if this HTML structure matches yours -->
+    <!-- Replace or update your existing modal with this structure if needed -->
+    <div id="accessDeniedModal" class="access-denied-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Access Denied</h3>
+          <span class="modal-close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="error-animation">
+            <div class="error-icon">
+              <div class="lock-hook"></div>
+              <div class="lock-body"></div>
+            </div>
+            <div class="error-message">
+              <div class="glitch-text" data-text="ACCESS DENIED">ACCESS DENIED</div>
+            </div>
+          </div>
+          <div class="terminal-output">
+            <div class="output-line"><span class="prompt">&gt;</span> Connecting to secure server...</div>
+            <div class="output-line"><span class="prompt">&gt;</span> Verifying credentials...</div>
+            <div class="output-line"><span class="prompt">&gt;</span> Authentication failed!</div>
+            <div class="output-line error">Access denied: Insufficient privileges</div>
+            <div class="output-line"><span class="prompt">&gt;</span> Connection terminated</div>
+          </div>
+          <div class="contact-suggestion">
+            <p>Need assistance? Contact our security team.</p>
+            <a href="#contact" class="contact-btn" id="redirectToContact">Contact Support</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section id="contact">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="form-group">
+            <input type="text" id="name" class="form-control" placeholder=" " required>
+            <label for="name" class="form-label">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" class="form-control" placeholder=" " required>
+            <label for="email" class="form-label">Your Email</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="subject" class="form-control" placeholder=" " required>
+            <label for="subject" class="form-label">Subject</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" class="form-control" placeholder=" " required></textarea>
+            <label for="message" class="form-label">Your Message</label>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Mohamed Essyad | Creative Developer</p>
+      <div class="social-links">
+        <a href="#" class="social-link">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#" class="social-link">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="#" class="social-link">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="social-link">
+          <i class="fab fa-dribbble"></i>
+        </a>
+      </div>
+      <a href="#home" class="back-to-top">↑</a>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>محمد اسياد | مطور إبداعي</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+      // Replace your current triggerAccessDenied function with this improved version
+      function triggerAccessDenied() {
+        console.log("Access denied function triggered");
+        
+        // Get the modal
+        const modal = document.getElementById('accessDeniedModal');
+        
+        if (modal) {
+          console.log("Modal found, setting display");
+          
+          // CRITICAL FIX: Force the modal to be fixed in the current viewport
+          // regardless of scroll position
+          modal.style.position = 'fixed';
+          modal.style.top = '0';
+          modal.style.left = '0';
+          modal.style.right = '0';
+          modal.style.bottom = '0';
+          modal.style.display = 'flex';
+          modal.style.alignItems = 'center';
+          modal.style.justifyContent = 'center';
+          modal.style.visibility = 'visible';
+          modal.style.opacity = '1';
+          modal.style.zIndex = '9999';
+          
+          // Add a class that forces display
+          modal.classList.add('modal-visible');
+          
+          // Make sure the modal content is visible
+          const modalContent = modal.querySelector('.modal-content');
+          if (modalContent) {
+            modalContent.style.position = 'relative';
+            modalContent.style.display = 'block';
+            modalContent.style.visibility = 'visible';
+            modalContent.style.opacity = '1';
+            modalContent.style.maxHeight = '90vh';
+            modalContent.style.overflow = 'auto';
+            modalContent.style.margin = 'auto';
+          }
+          
+          // Make sure the contact suggestion is visible
+          const contactSuggestion = modal.querySelector('.contact-suggestion');
+          if (contactSuggestion) {
+            contactSuggestion.style.display = 'block';
+            contactSuggestion.style.visibility = 'visible';
+          }
+          
+          // Animate terminal output lines sequentially
+          const outputLines = document.querySelectorAll('.terminal-output .output-line');
+          outputLines.forEach((line, index) => {
+            setTimeout(() => {
+              line.classList.add('active');
+            }, 300 * index);
+          });
+          
+          // Create a function to close the modal
+          function closeModal() {
+            modal.style.display = 'none';
+            modal.classList.remove('modal-visible');
+          }
+          
+          // Add a click handler to close the modal
+          const closeBtn = modal.querySelector('.modal-close');
+          if (closeBtn) {
+            closeBtn.onclick = function(e) {
+              e.stopPropagation();
+              closeModal();
+            };
+          }
+          
+          // Also allow clicking outside the modal to close it
+          modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+              closeModal();
+            }
+          });
+          
+          console.log("Modal style applied:", modal.style.display);
+        } else {
+          console.error("Modal element not found!");
+        }
+        
+        // Prevent default link behavior
+        return false;
+      }
+    </script>
+  </head>
+  <body>
+    <header id="home">
+      <div class="header-content">
+        <h1 class="glitch" data-text="محمد عسياد">محمد اسياد</h1>
+        <div class="terminal-text">$ echo "مطور ويب متكامل إبداعي"</div>
+      </div>
+      <div class="cv-download-container">
+        <div class="cv-download-button">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="terminal-title">install_cv.sh</div>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">$ <span class="typing-text">curl -O https://محمد-اسياد.com/cv.pdf</span></div>
+            <div class="terminal-line progress-line">
+              <div class="progress-text">Downloading...</div>
+              <div class="progress-bar"><div class="progress-fill"></div></div>
+            </div>
+            <div class="terminal-line success-line">Installation complete! <span class="blink">█</span></div>
+          </div>
+        </div>
+      </div>
+      
+    </header>
+
+    <nav class="show">
+      <div class="nav-container">
+        <div class="nav-toggle" id="navToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="nav-link">الرئيسية</a></li>
+          <li><a href="#about" class="nav-link">من أنا</a></li>
+          <li><a href="#skills" class="nav-link">المهارات</a></li>
+          <li><a href="#projects" class="nav-link">المشاريع</a></li>
+          <li><a href="#contact" class="nav-link">اتصل بي</a></li>
+          <li><a href="index.html" class="nav-link">English</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="about">
+      <h2 class="section-title">من أنا</h2>
+      <div class="about-content">
+        <div class="about-image card-3d">
+          <img src="./images/WhatsApp Image 2025-03-12 à 02.02.26_60568687.jpg" alt="صورة محمد عسياد" />
+        </div>
+        <div class="about-text">
+          <p>
+            مرحبًا بك في عالمي الرقمي! أنا محمد عسياد، مطور ويب متكامل إبداعي ومحلل مشاكل، شغوف بتحويل الأفكار إلى تطبيقات ويب وظيفية وجذابة بصريًا.
+          </p>
+          <p>
+            مقيم في نواكشوط، موريتانيا، أنا حاليًا طالب في Supnum ومطور في Dazrim. يدور عملي حول دفع حدود التفاعل الرقمي والأتمتة.
+          </p>
+          <div class="bio-item">
+            <span class="bio-icon">🌍</span>
+            <span>مقيم في نواكشوط، موريتانيا</span>
+          </div>
+          <div class="bio-item">
+            <span class="bio-icon">🎓</span>
+            <span>طالب في Supnum</span>
+          </div>
+          <div class="bio-item">
+            <span class="bio-icon">💼</span>
+            <span>مطور في Dazrim</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">مصفوفة المهارات</h2>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3>استخراج البيانات والأتمتة</h3>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Scrapy</span>
+              <span>92%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 92%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Selenium</span>
+              <span>88%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 88%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Requests</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>BeautifulSoup</span>
+              <span>80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>إتقان الواجهة الأمامية</h3>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>React / Node.js</span>
+              <span>95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 95%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>JavaScript</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>CSS/Bootstrap</span>
+              <span>87%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 87%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Framer Motion</span>
+              <span>82%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 82%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>أنظمة الخلفية</h3>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Node.js/Express</span>
+              <span>88%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 88%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Django</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>MySQL</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>MongoDB</span>
+              <span>80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">الأعمال المميزة</h2>
+        <div class="projects-grid">
+          <!-- Project Card 1 -->
+          <div class="project-terminal">
+            <div class="terminal-header">
+              <div class="terminal-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control expand"></span>
+              </div>
+              <div class="terminal-title">project_1.sh</div>
+            </div>
+            <div class="terminal-body">
+              <div class="terminal-content">
+                <div class="command-line"><span class="prompt">$&gt;</span> <span class="command">load_project</span> <span class="param">e-commerce</span></div>
+                <div class="response">
+                  <div class="project-image">
+                    <img src="./images/firstProject.png" alt="مشروع التجارة الإلكترونية" />
+                    <div class="image-overlay">
+                      <div class="scan-line"></div>
+                    </div>
+                  </div>
+                  <div class="project-data">
+                    <div class="data-line"><span class="key">PROJECT_NAME:</span> <span class="value">تطبيق ويب للتجارة الإلكترونية</span></div>
+                    <div class="data-line"><span class="key">DESCRIPTION:</span> <span class="value">متجر إلكتروني من الجيل التالي مع إدارة ديناميكية للمخزون ومدفوعات آمنة.</span></div>
+                    <div class="data-line"><span class="key">TECH_STACK:</span> <span class="value tags">
+                      <span class="tag">React</span>
+                      <span class="tag">Express</span>
+                      <span class="tag">MongoDB</span>
+                    </span></div>
+                  </div>
+                </div>
+                <div class="command-line"><span class="prompt">$&gt;</span> <span class="command">open</span> <span class="param">demo</span></div>
+                <div class="terminal-links">
+                  <a href="javascript:void(0)" onclick="triggerAccessDenied(); return false;" class="terminal-link demo-link" data-action="demo" data-project="e-commerce">عرض المشروع</a>
+                  <a href="javascript:void(0)" onclick="triggerAccessDenied(); return false;" class="terminal-link source-link" data-action="source" data-project="e-commerce">كود المصدر</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Project Card 2 -->
+          <div class="project-terminal">
+            <div class="terminal-header">
+              <div class="terminal-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control expand"></span>
+              </div>
+              <div class="terminal-title">project_2.sh</div>
+            </div>
+            <div class="terminal-body">
+              <div class="terminal-content">
+                <div class="command-line"><span class="prompt">$&gt;</span> <span class="command">load_project</span> <span class="param">smart-catalog</span></div>
+                <div class="response">
+                  <div class="project-image">
+                    <img src="./images/admin.png" alt="كتالوج المنتجات الذكي" />
+                    <div class="image-overlay">
+                      <div class="scan-line"></div>
+                    </div>
+                  </div>
+                  <div class="project-data">
+                    <div class="data-line"><span class="key">PROJECT_NAME:</span> <span class="value">كتالوج المنتجات الذكي</span></div>
+                    <div class="data-line"><span class="key">DESCRIPTION:</span> <span class="value">كتالوج رقمي متطور مدعوم باستخراج البيانات والأتمتة.</span></div>
+                    <div class="data-line"><span class="key">TECH_STACK:</span> <span class="value tags">
+                      <span class="tag">React</span>
+                      <span class="tag">Django</span>
+                      <span class="tag">REST API</span>
+                    </span></div>
+                  </div>
+                </div>
+                <div class="command-line"><span class="prompt">$&gt;</span> <span class="command">open</span> <span class="param">demo</span></div>
+                <div class="terminal-links">
+                  <a href="javascript:void(0)" onclick="triggerAccessDenied(); return false;" class="terminal-link demo-link" data-action="demo" data-project="smart-catalog">عرض المشروع</a>
+                  <a href="javascript:void(0)" onclick="triggerAccessDenied(); return false;" class="terminal-link source-link" data-action="source" data-project="smart-catalog">كود المصدر</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Project Card 3 -->
+          <div class="project-terminal">
+            <div class="terminal-header">
+              <div class="terminal-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control expand"></span>
+              </div>
+              <div class="terminal-title">project_3.sh</div>
+            </div>
+            <div class="terminal-body">
+              <div class="terminal-content">
+                <div class="command-line"><span class="prompt">$&gt;</span> <span class="command">load_project</span> <span class="param">tourism-platform</span></div>
+                <div class="response">
+                  <div class="project-image">
+                    <img src="./images/tor.png" alt="موقع سياحي" />
+                    <div class="image-overlay">
+                      <div class="scan-line"></div>
+                    </div>
+                  </div>
+                  <div class="project-data">
+                    <div class="data-line"><span class="key">PROJECT_NAME:</span> <span class="value">موقع سياحي</span></div>
+                    <div class="data-line"><span class="key">DESCRIPTION:</span> <span class="value">منصة سياحية مذهلة بصريًا تعرض الوجهات بتجربة مستخدم جذابة.</span></div>
+                    <div class="data-line"><span class="key">TECH_STACK:</span> <span class="value tags">
+                      <span class="tag">HTML</span>
+                      <span class="tag">CSS</span>
+                      <span class="tag">JavaScript</span>
+                      <span class="tag">PHP</span>
+                    </span></div>
+                  </div>
+                </div>
+                <div class="command-line"><span class="prompt">$&gt;</span> <span class="command">open</span> <span class="param">demo</span></div>
+                <div class="terminal-links">
+                  <a href="javascript:void(0)" onclick="triggerAccessDenied(); return false;" class="terminal-link demo-link" data-action="demo" data-project="tourism-platform" onclick="triggerAccessDenied()">عرض المشروع</a>
+                  <a href="javascript:void(0)" onclick="triggerAccessDenied(); return false;" class="terminal-link source-link" data-action="source" data-project="tourism-platform" onclick="triggerAccessDenied()" >كود المصدر</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Modal for restricted projects -->
+      <!-- If your modal isn't appearing, you can check if this HTML structure matches yours -->
+<!-- Replace or update your existing modal with this structure if needed -->
+<div id="accessDeniedModal" class="access-denied-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>تم رفض الوصول</h3>
+      <span class="modal-close">&times;</span>
+    </div>
+    <div class="modal-body">
+      <div class="error-animation">
+        <div class="error-icon">
+          <div class="lock-hook"></div>
+          <div class="lock-body"></div>
+        </div>
+        <div class="error-message">
+          <div class="glitch-text" data-text="ACCESS DENIED">تم رفض الوصول</div>
+        </div>
+      </div>
+      <div class="terminal-output">
+        <div class="output-line"><span class="prompt">&gt;</span> الاتصال بالخادم الآمن...</div>
+        <div class="output-line"><span class="prompt">&gt;</span> التحقق من بيانات الاعتماد...</div>
+        <div class="output-line"><span class="prompt">&gt;</span> فشل التحقق!</div>
+        <div class="output-line error">تم رفض الوصول: امتيازات غير كافية</div>
+        <div class="output-line"><span class="prompt">&gt;</span> تم إنهاء الاتصال</div>
+      </div>
+      <div class="contact-suggestion">
+        <p>تحتاج إلى مساعدة؟ اتصل بفريق الأمان لدينا.</p>
+        <a href="#contact" class="contact-btn" id="redirectToContact">اتصل بالدعم</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <section id="contact">
+      <h2 class="section-title">اتصل بي</h2>
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="form-group">
+            <input type="text" id="name" class="form-control" placeholder=" " required>
+            <label for="name" class="form-label">اسمك</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" class="form-control" placeholder=" " required autocomplete="on">
+            <label for="email" class="form-label">بريدك الإلكتروني</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="subject" class="form-control" placeholder=" " required autocomplete="on">
+            <label for="subject" class="form-label">الموضوع</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" class="form-control" placeholder=" " required autocomplete="on"></textarea>
+            <label for="message" class="form-label">رسالتك</label>
+          </div>
+          <button type="submit" class="submit-btn">إرسال الرسالة</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 محمد  اسياد | مطور إبداعي</p>
+      <div class="social-links">
+        <a href="#" class="social-link">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#" class="social-link">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="#" class="social-link">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="social-link">
+          <i class="fab fa-dribbble"></i>
+        </a>
+      </div>
+      <a href="#home" class="back-to-top">↑</a>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
