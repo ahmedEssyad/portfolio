@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // Actual download action
         const link = document.createElement('a');
-        link.href = 'YOUR_CV_URL_HERE'; // Replace with your actual CV URL
+        link.href = 'https://drive.google.com/file/d/1D9bZCkNdxJdmXiK5qziKJmNZJoZL2iEe/view?usp=drivesdk'; // Replace with your actual CV URL
         link.download = 'محمد_اسياد_CV.pdf';
         document.body.appendChild(link);
         link.click();
@@ -67,59 +67,56 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // Handle form submission
+  document.addEventListener('DOMContentLoaded', function() {
+  const contactForm = document.getElementById('contactForm');
+  
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
-    // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
     
-    // Validate email format
+    // Enhanced client-side validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!name || !email || !subject || !message) {
+      showNotification('Please fill in all fields', 'error');
+      return;
+    }
+    
     if (!emailRegex.test(email)) {
       showNotification('Please enter a valid email address', 'error');
       return;
     }
-    
-    // Normally you would send this data to a server
-    // For demonstration, we'll just show a success message
-    // and clear the form
-    
-    // In a real implementation, you would use fetch() or axios to send data:
-    /*
-    fetch('your-api-endpoint', {
+
+    // Your specific Formspree endpoint
+    fetch('https://formspree.io/f/manedwjq', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        name,
-        email,
-        subject,
-        message
+        name: name,
+        email: email,
+        subject: subject,
+        message: message
       })
     })
-    .then(response => response.json())
-    .then(data => {
-      showNotification('Message sent successfully!', 'success');
-      contactForm.reset();
-      resetFormLabels();
+    .then(response => {
+      if (response.ok) {
+        showNotification('Message sent successfully!', 'success');
+        contactForm.reset();
+      } else {
+        showNotification('Failed to send message. Please try again.', 'error');
+      }
     })
     .catch(error => {
-      showNotification('Failed to send message. Please try again.', 'error');
       console.error('Error:', error);
+      showNotification('Network error. Please try again.', 'error');
     });
-    */
-    
-    // Demo version - just show success and reset
-    showNotification('Message sent successfully!', 'success');
-    contactForm.reset();
-    resetFormLabels();
   });
-  
+});
   // Function to reset form labels after form reset
   function resetFormLabels() {
     const labels = document.querySelectorAll('.form-label');
