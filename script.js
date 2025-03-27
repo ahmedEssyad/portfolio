@@ -48,37 +48,15 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener('DOMContentLoaded', function() {
   const contactForm = document.getElementById('contactForm');
   
-  // Add floating label effect for form inputs
-  const formInputs = document.querySelectorAll('.form-control');
-  formInputs.forEach(input => {
-    // Add active class to labels when input has content
-    input.addEventListener('input', function() {
-      const label = this.nextElementSibling;
-      if (this.value) {
-        label.classList.add('active');
-      } else {
-        label.classList.remove('active');
-      }
-    });
-    
-    // Check if input already has content (e.g., on page refresh)
-    if (input.value) {
-      input.nextElementSibling.classList.add('active');
-    }
-  });
-  
-  document.addEventListener('DOMContentLoaded', function() {
-  const contactForm = document.getElementById('contactForm');
-  
   contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
+    e.preventDefault(); // Prevent default form submission
     
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const subject = document.getElementById('subject').value.trim();
     const message = document.getElementById('message').value.trim();
     
-    // Enhanced client-side validation
+    // Validation logic
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!name || !email || !subject || !message) {
       showNotification('Please fill in all fields', 'error');
@@ -90,7 +68,12 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    // Your specific Formspree endpoint
+    // Disable submit button during submission
+    const submitBtn = contactForm.querySelector('.submit-btn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    // Submit form using Fetch API
     fetch('https://formspree.io/f/manedwjq', {
       method: 'POST',
       headers: {
@@ -106,14 +89,28 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => {
       if (response.ok) {
         showNotification('Message sent successfully!', 'success');
-        contactForm.reset();
+        contactForm.reset(); // Clear form fields
+        
+        // Reset form labels
+        const labels = contactForm.querySelectorAll('.form-label');
+        labels.forEach(label => {
+          label.classList.remove('active');
+        });
       } else {
-        showNotification('Failed to send message. Please try again.', 'error');
+        // Handle error response
+        return response.json().then(errorData => {
+          throw new Error(errorData.error || 'Failed to send message');
+        });
       }
     })
     .catch(error => {
-      console.error('Error:', error);
-      showNotification('Network error. Please try again.', 'error');
+      console.error('Submission Error:', error);
+      showNotification(error.message || 'Network error. Please try again.', 'error');
+    })
+    .finally(() => {
+      // Re-enable submit button
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
     });
   });
 });
