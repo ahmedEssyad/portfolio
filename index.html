@@ -455,51 +455,54 @@
     <section id="contact">
       <h2 class="section-title">Get In Touch</h2>
       <div class="contact-form">
-        <form id="contactForm" action="https://formspree.io/f/manedwjq" method="POST">
+    <form id="contactForm" action="https://formspree.io/f/manedwjq" method="POST">
   <div class="form-group">
     <input 
       type="text" 
       id="name" 
-      name="name"  // Add name attribute
+      name="name"
       class="form-control" 
       placeholder=" " 
       required
     >
-    <label for="name" class="form-label">Your Name</label>
+    <label for="name" class="form-label">اسمك</label>
   </div>
   <div class="form-group">
     <input 
       type="email" 
       id="email" 
-      name="_replyto"  // Formspree uses _replyto for email
+      name="_replyto"
       class="form-control" 
       placeholder=" " 
-      required
+      required 
+      autocomplete="on"
     >
-    <label for="email" class="form-label">Your Email</label>
+    <label for="email" class="form-label">بريدك الإلكتروني</label>
   </div>
   <div class="form-group">
     <input 
       type="text" 
       id="subject" 
-      name="_subject"  // Formspree-specific subject field
+      name="_subject"
       class="form-control" 
       placeholder=" " 
-      required
+      required 
+      autocomplete="on"
     >
-    <label for="subject" class="form-label">Subject</label>
+    <label for="subject" class="form-label">الموضوع</label>
   </div>
   <div class="form-group">
     <textarea 
       id="message" 
-      name="message"  // Add name attribute for message
+      name="message"
       class="form-control" 
       placeholder=" " 
-      required
+      required 
+      autocomplete="on"
     ></textarea>
-    <label for="message" class="form-label">Your Message</label>
+    <label for="message" class="form-label">رسالتك</label>
   </div>
-  <button type="submit" class="submit-btn">Send Message</button>
+  <button type="submit" class="submit-btn">إرسال الرسالة</button>
 </form>
       </div>
     </section>
