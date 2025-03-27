@@ -73,44 +73,56 @@ document.addEventListener('DOMContentLoaded', function() {
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
 
+    // Create FormData object
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('_replyto', email);
+    formData.append('_subject', subject);
+    formData.append('message', message);
+
     // Submit form using Fetch API
     fetch('https://formspree.io/f/manedwjq', {
       method: 'POST',
+      body: formData,
       headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        subject: subject,
-        message: message
-      })
-    })
-    .then(response => {
-      if (response.ok) {
-        showNotification('Message sent successfully!', 'success');
-        contactForm.reset(); // Clear form fields
-        
-        // Reset form labels
-        const labels = contactForm.querySelectorAll('.form-label');
-        labels.forEach(label => {
-          label.classList.remove('active');
-        });
-      } else {
-        // Handle error response
-        return response.json().then(errorData => {
-          throw new Error(errorData.error || 'Failed to send message');
-        });
+        'Accept': 'application/json'
       }
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Clear form and show success message
+      contactForm.reset();
+      
+      // Reset form labels
+      const labels = contactForm.querySelectorAll('.form-label');
+      labels.forEach(label => {
+        label.classList.remove('active');
+      });
+
+      // Show success notification
+      showNotification('Message sent successfully!', 'success');
     })
     .catch(error => {
       console.error('Submission Error:', error);
-      showNotification(error.message || 'Network error. Please try again.', 'error');
+      showNotification('Failed to send message. Please try again.', 'error');
     })
     .finally(() => {
       // Re-enable submit button
       submitBtn.disabled = false;
       submitBtn.textContent = 'Send Message';
+    });
+  });
+
+  // Add label animation for existing inputs
+  const formInputs = document.querySelectorAll('.form-control');
+  formInputs.forEach(input => {
+    input.addEventListener('input', function() {
+      const label = this.nextElementSibling;
+      if (this.value) {
+        label.classList.add('active');
+      } else {
+        label.classList.remove('active');
+      }
     });
   });
 });
