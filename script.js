@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
           // Actual download action
           const link = document.createElement('a');
           link.href = 'https://drive.google.com/file/d/11l0ZOgfjvELU_5wMK3KEeigsX-ycF2Wg/view?usp=drive_linkf';
-          link.download = 'محمد_اسياد_CV.pdf';
+          link.download = 'https://drive.google.com/file/d/11l0ZOgfjvELU_5wMK3KEeigsX-ycF2Wg/view?usp=drive_linkf';
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
