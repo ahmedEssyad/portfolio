@@ -4,94 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mohamed Essyad | Creative Developer</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Mohamed Essyad - Creative Full-Stack Developer specializing in web scraping, automation, and modern web applications. Based in Nouakchott, Mauritania.">
+    <meta name="keywords" content="full-stack developer, web scraping, automation, React, Node.js, Python, MongoDB">
+    <meta name="author" content="Mohamed Essyad">
+    <link rel="preload" href="style-optimized.css" as="style">
+    <link rel="stylesheet" href="style-optimized.css">
 
-    <script>
-      // Replace your current triggerAccessDenied function with this improved version
-      function triggerAccessDenied() {
-        console.log("Access denied function triggered");
-        
-        // Get the modal
-        const modal = document.getElementById('accessDeniedModal');
-        
-        if (modal) {
-          console.log("Modal found, setting display");
-          
-          // CRITICAL FIX: Force the modal to be fixed in the current viewport
-          // regardless of scroll position
-          modal.style.position = 'fixed';
-          modal.style.top = '0';
-          modal.style.left = '0';
-          modal.style.right = '0';
-          modal.style.bottom = '0';
-          modal.style.display = 'flex';
-          modal.style.alignItems = 'center';
-          modal.style.justifyContent = 'center';
-          modal.style.visibility = 'visible';
-          modal.style.opacity = '1';
-          modal.style.zIndex = '9999';
-          
-          // Add a class that forces display
-          modal.classList.add('modal-visible');
-          
-          // Make sure the modal content is visible
-          const modalContent = modal.querySelector('.modal-content');
-          if (modalContent) {
-            modalContent.style.position = 'relative';
-            modalContent.style.display = 'block';
-            modalContent.style.visibility = 'visible';
-            modalContent.style.opacity = '1';
-            modalContent.style.maxHeight = '90vh';
-            modalContent.style.overflow = 'auto';
-            modalContent.style.margin = 'auto';
-          }
-          
-          // Make sure the contact suggestion is visible
-          const contactSuggestion = modal.querySelector('.contact-suggestion');
-          if (contactSuggestion) {
-            contactSuggestion.style.display = 'block';
-            contactSuggestion.style.visibility = 'visible';
-          }
-          
-          // Animate terminal output lines sequentially
-          const outputLines = document.querySelectorAll('.terminal-output .output-line');
-          outputLines.forEach((line, index) => {
-            setTimeout(() => {
-              line.classList.add('active');
-            }, 300 * index);
-          });
-          
-          // Create a function to close the modal
-          function closeModal() {
-            modal.style.display = 'none';
-            modal.classList.remove('modal-visible');
-          }
-          
-          // Add a click handler to close the modal
-          const closeBtn = modal.querySelector('.modal-close');
-          if (closeBtn) {
-            closeBtn.onclick = function(e) {
-              e.stopPropagation();
-              closeModal();
-            };
-          }
-          
-          // Also allow clicking outside the modal to close it
-          modal.addEventListener('click', function(event) {
-            if (event.target === modal) {
-              closeModal();
-            }
-          });
-          
-          console.log("Modal style applied:", modal.style.display);
-        } else {
-          console.error("Modal element not found!");
-        }
-        
-        // Prevent default link behavior
-        return false;
-      }
-    </script>
+    <!-- Inline scripts removed - moved to script-optimized.js -->
   </head>
   <body>
     
@@ -146,7 +65,7 @@
       <h2 class="section-title">About Me</h2>
       <div class="about-content">
         <div class="about-image card-3d">
-          <img src="./images/WhatsApp Image 2025-03-12 à 02.02.26_60568687.jpg" alt="Mohamed Essyad< profile photo" />
+          <img src="./images/WhatsApp Image 2025-03-12 à 02.02.26_60568687.jpg" alt="Mohamed Essyad profile photo" loading="lazy" width="300" height="300" />
         </div>
         <div class="about-text">
             <p>
@@ -527,7 +446,7 @@
             </div>
             <div class="project-content">
               <div class="project-image">
-                <img src="images/tor.png" alt="Tourism Website" />
+                <img src="images/tor.png" alt="Tourism Website" loading="lazy" width="400" height="250" />
                 <div class="hologram-overlay"></div>
               </div>
               <div class="project-description">
@@ -700,7 +619,7 @@
       <a href="#home" class="back-to-top">↑</a>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" defer></script>
+    <script src="script-optimized.js" defer></script>
   </body>
 </html>
