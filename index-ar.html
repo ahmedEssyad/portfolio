@@ -3,101 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>محمد اسياد | مطور إبداعي</title>
-    <link rel="stylesheet" href="style.css">
+    <title>محمد اسياد | مطور متكامل كبير ومعمار حلول الذكاء الاصطناعي</title>
+    <meta name="description" content="محمد اسياد - مطور ويب متكامل كبير ومعمار حلول الذكاء الاصطناعي. خبير في React و Node.js وتكامل الذكاء الاصطناعي والتطبيقات القابلة للتطوير. متاح للتوظيف.">
+    <meta name="keywords" content="مطور ويب متكامل، مطور ذكاء اصطناعي، خبير React، Node.js، تكامل OpenAI، تجارة إلكترونية، تطبيقات ويب، توظيف مطور">
+    <meta name="author" content="محمد اسياد">
+    <link rel="preload" href="style-optimized.css" as="style">
+    <link rel="stylesheet" href="style-optimized.css">
 
-    <script>
-      // Replace your current triggerAccessDenied function with this improved version
-      function triggerAccessDenied() {
-        console.log("Access denied function triggered");
-        
-        // Get the modal
-        const modal = document.getElementById('accessDeniedModal');
-        
-        if (modal) {
-          console.log("Modal found, setting display");
-          
-          // CRITICAL FIX: Force the modal to be fixed in the current viewport
-          // regardless of scroll position
-          modal.style.position = 'fixed';
-          modal.style.top = '0';
-          modal.style.left = '0';
-          modal.style.right = '0';
-          modal.style.bottom = '0';
-          modal.style.display = 'flex';
-          modal.style.alignItems = 'center';
-          modal.style.justifyContent = 'center';
-          modal.style.visibility = 'visible';
-          modal.style.opacity = '1';
-          modal.style.zIndex = '9999';
-          
-          // Add a class that forces display
-          modal.classList.add('modal-visible');
-          
-          // Make sure the modal content is visible
-          const modalContent = modal.querySelector('.modal-content');
-          if (modalContent) {
-            modalContent.style.position = 'relative';
-            modalContent.style.display = 'block';
-            modalContent.style.visibility = 'visible';
-            modalContent.style.opacity = '1';
-            modalContent.style.maxHeight = '90vh';
-            modalContent.style.overflow = 'auto';
-            modalContent.style.margin = 'auto';
-          }
-          
-          // Make sure the contact suggestion is visible
-          const contactSuggestion = modal.querySelector('.contact-suggestion');
-          if (contactSuggestion) {
-            contactSuggestion.style.display = 'block';
-            contactSuggestion.style.visibility = 'visible';
-          }
-          
-          // Animate terminal output lines sequentially
-          const outputLines = document.querySelectorAll('.terminal-output .output-line');
-          outputLines.forEach((line, index) => {
-            setTimeout(() => {
-              line.classList.add('active');
-            }, 300 * index);
-          });
-          
-          // Create a function to close the modal
-          function closeModal() {
-            modal.style.display = 'none';
-            modal.classList.remove('modal-visible');
-          }
-          
-          // Add a click handler to close the modal
-          const closeBtn = modal.querySelector('.modal-close');
-          if (closeBtn) {
-            closeBtn.onclick = function(e) {
-              e.stopPropagation();
-              closeModal();
-            };
-          }
-          
-          // Also allow clicking outside the modal to close it
-          modal.addEventListener('click', function(event) {
-            if (event.target === modal) {
-              closeModal();
-            }
-          });
-          
-          console.log("Modal style applied:", modal.style.display);
-        } else {
-          console.error("Modal element not found!");
-        }
-        
-        // Prevent default link behavior
-        return false;
-      }
-    </script>
+    <!-- Inline scripts removed - moved to script-optimized.js -->
   </head>
   <body>
     <header id="home">
       <div class="header-content">
-        <h1 class="glitch" data-text="محمد عسياد">محمد اسياد</h1>
-        <div class="terminal-text">$ echo "مطور ويب متكامل إبداعي"</div>
+        <h1 class="glitch" data-text="محمد اسياد">محمد اسياد</h1>
+        <div class="terminal-text">$ echo "مطور ويب متكامل كبير ومعمار حلول الذكاء الاصطناعي"</div>
+        <div class="terminal-text">$ status --متاح-للتوظيف</div>
       </div>
       <div class="cv-download-container">
         <div class="cv-download-button">
@@ -148,22 +68,22 @@
         </div>
         <div class="about-text">
           <p>
-            مرحبًا بك في عالمي الرقمي! أنا محمد عسياد، مطور ويب متكامل إبداعي ومحلل مشاكل، شغوف بتحويل الأفكار إلى تطبيقات ويب وظيفية وجذابة بصريًا.
+            مطور ويب متكامل كبير مع أكثر من 3 سنوات من الخبرة في بناء تطبيقات الويب القابلة للتطوير والحلول المدعومة بالذكاء الاصطناعي. أتخصص في React و Node.js وأنظمة JavaScript الحديثة، مع خبرة في تكامل APIs الذكاء الاصطناعي وبوابات الدفع.
           </p>
           <p>
-            مقيم في نواكشوط، موريتانيا، أنا حاليًا طالب في Supnum ومطور في Dazrim. يدور عملي حول دفع حدود التفاعل الرقمي والأتمتة.
+            متاح حاليًا للتوظيف كمطور مستقل أو لمنصب بدوام كامل. أقدم تطبيقات جاهزة للإنتاج من المفهوم إلى النشر، مع التركيز على الأداء وتجربة المستخدم والقيمة التجارية.
           </p>
           <div class="bio-item">
             <span class="bio-icon">🌍</span>
             <span>مقيم في نواكشوط، موريتانيا</span>
           </div>
           <div class="bio-item">
-            <span class="bio-icon">🎓</span>
-            <span>طالب في Supnum</span>
+            <span class="bio-icon">💼</span>
+            <span>مؤسس شريك والرئيس التنفيذي لـ <a href="https://www.elhilal-dev.com/">الهلال</a> | متاح للتوظيف</span>
           </div>
           <div class="bio-item">
-            <span class="bio-icon">💼</span>
-            <span>مطور في Dazrim</span>
+            <span class="bio-icon">🚀</span>
+            <span>3+ سنوات خبرة | 20+ مشروع منجز</span>
           </div>
         </div>
       </div>
@@ -333,41 +253,41 @@
     </div>
     
     <div class="skill-category">
-      <h3>DevOps والأمن السيبراني</h3>
+      <h3>الذكاء الاصطناعي والتكامل</h3>
       <div class="skill-item">
         <div class="skill-name">
-          <span>Docker</span>
+          <span>OpenAI API</span>
+          <span>90%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 90%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">
+          <span>بوابات الدفع</span>
+          <span>85%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 85%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">
+          <span>Gmail API</span>
+          <span>88%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 88%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">
+          <span>Docker/النشر</span>
           <span>86%</span>
         </div>
         <div class="skill-bar">
           <div class="skill-progress" style="width: 86%"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name">
-          <span>Git/GitHub</span>
-          <span>92%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" style="width: 92%"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name">
-          <span>استقصاء نظام أسماء النطاقات</span>
-          <span>78%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" style="width: 78%"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name">
-          <span>اختبار الاختراق</span>
-          <span>75%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" style="width: 75%"></div>
         </div>
       </div>
     </div>
@@ -458,8 +378,8 @@
     <div class="project-hologram">
       <div class="hologram-frame">
         <div class="hologram-header">
-          <div class="project-title">منصة تجارة إلكترونية</div>
-          <div class="project-status in-progress">قيد التطوير</div>
+          <div class="project-title">لوحة تحكم إدارية للتجارة الإلكترونية</div>
+          <div class="project-status completed">مباشر وجاهز للإنتاج</div>
         </div>
         <div class="project-content">
           <div class="project-image">
@@ -471,27 +391,65 @@
             <div class="hologram-overlay"></div>
           </div>
           <div class="project-description">
-            <p>تطبيق تجارة إلكترونية غني بالميزات يشمل كتالوج المنتجات، وإدارة سلة التسوق، ومصادقة المستخدم، وتكامل المدفوعات، ولوحة تحكم المسؤول.</p>
+            <p>لوحة تحكم إدارية جاهزة للإنتاج للتجارة الإلكترونية مع تحليلات فورية، وإدارة المخزون، ومعالجة الطلبات، ونظام تقارير شامل. مبنية بـ React الحديثة وتصميم متجاوب.</p>
             <div class="tech-stack">
               <span class="tech-item">React</span>
-              <span class="tech-item">Node.js</span>
-              <span class="tech-item">Express</span>
-              <span class="tech-item">MongoDB</span>
+              <span class="tech-item">Chart.js</span>
+              <span class="tech-item">Material-UI</span>
+              <span class="tech-item">تصميم متجاوب</span>
             </div>
           </div>
           <div class="project-actions">
             <a href="https://github.com/ahmedEssyad/admin-dashboard" target="_blank" class="action-button github">
               <i class="fab fa-github"></i> GitHub
             </a>
-            <a href="javascript:void(0)" onclick="triggerAccessDenied(); return false;" class="action-button demo">
-              <i class="fas fa-external-link-alt"></i> عرض
+            <a href="https://admin-dashboard-kxlj.vercel.app/" target="_blank" class="action-button demo">
+              <i class="fas fa-external-link-alt"></i> عرض مباشر
             </a>
           </div>
         </div>
       </div>
     </div>
     
-    <!-- Project Card 4 - Travel Agency Dashboard -->
+    <!-- Project Card 4 - Correyo AI Email Assistant -->
+    <div class="project-hologram">
+      <div class="hologram-frame">
+        <div class="hologram-header">
+          <div class="project-title">Correyo - مساعد البريد الإلكتروني بالذكاء الاصطناعي</div>
+          <div class="project-status in-progress">قيد التطوير</div>
+        </div>
+        <div class="project-content">
+          <div class="project-image">
+            <div class="hologram-placeholder">
+              <div class="ai-icon">
+                <i class="fas fa-robot"></i>
+              </div>
+            </div>
+            <div class="hologram-overlay"></div>
+          </div>
+          <div class="project-description">
+            <p>مساعد بريد إلكتروني مدعوم بالذكاء الاصطناعي يتكامل مع OpenAI GPT لتوليد رسائل بريد إلكتروني ذكية، وGmail API لإدارة البريد الإلكتروني بسلاسة، وبوابة دفع PayPal لفواتير الاشتراك.</p>
+            <div class="tech-stack">
+              <span class="tech-item">OpenAI API</span>
+              <span class="tech-item">Gmail API</span>
+              <span class="tech-item">PayPal Gateway</span>
+              <span class="tech-item">Node.js</span>
+              <span class="tech-item">React</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/ahmedEssyad/correyo" target="_blank" class="action-button github">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="javascript:void(0)" onclick="triggerAccessDenied(); return false;" class="action-button demo">
+              <i class="fas fa-external-link-alt"></i> قريبًا
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Project Card 5 - Travel Agency Dashboard -->
     <div class="project-hologram">
       <div class="hologram-frame">
         <div class="hologram-header">
@@ -709,8 +667,8 @@
       <a href="#home" class="back-to-top">↑</a>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" defer></script>
+    <script src="script-optimized.js" defer></script>
   </body>
 </html>
 
