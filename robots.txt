@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ahmedessyad.github.io/portfolio/sitemap.xml
+
+# Specific paths
+Allow: /images/
+Allow: /*.css
+Allow: /*.js
+
+# Block nothing - allow all crawling
+Disallow:
