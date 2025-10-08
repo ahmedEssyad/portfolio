@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohamed Essyad - Senior Full-Stack Developer & AI Solutions Architect | React & Node.js Expert</title>
+  <meta name="description" content="Senior Full-Stack Developer with 3+ years experience in React, Node.js, OpenAI integration, and scalable web applications. CEO of Elhilal. Available for consulting.">
+  <meta name="keywords" content="Mohamed Essyad, full-stack developer, React developer, Node.js expert, AI developer, OpenAI integration, JavaScript developer, web development, Mauritania developer, Elhilal CEO">
+  <meta name="author" content="Mohamed Essyad">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="geo.region" content="MR">
+  <meta name="geo.placename" content="Nouakchott">
+  <meta name="theme-color" content="#8e44ad">
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/icon-192.png">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ahmedessyad.github.io/portfolio/">
+  <meta property="og:title" content="Mohamed Essyad - Senior Full-Stack Developer & AI Solutions Architect">
+  <meta property="og:description" content="Senior Full-Stack Developer with 3+ years experience in React, Node.js, OpenAI integration, and scalable web applications.">
+  <meta property="og:image" content="https://ahmedessyad.github.io/portfolio/images/profile.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://ahmedessyad.github.io/portfolio/">
+  <meta property="twitter:title" content="Mohamed Essyad - Senior Full-Stack Developer & AI Solutions Architect">
+  <meta property="twitter:description" content="Senior Full-Stack Developer with 3+ years experience in React, Node.js, OpenAI integration, and scalable web applications.">
+  <meta property="twitter:image" content="https://ahmedessyad.github.io/portfolio/images/profile.jpg">
+  <meta property="twitter:site" content="@MoEssyad">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://ahmedessyad.github.io/portfolio/">
+
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="assets/css/main.min.css" as="style">
+  <link rel="preload" href="assets/js/main.min.js" as="script">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/main.min.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohamed Essyad",
+    "jobTitle": "Senior Full-Stack Developer & AI Solutions Architect",
+    "description": "Senior Full-Stack Developer with 3+ years experience in React, Node.js, OpenAI integration, and scalable web applications.",
+    "url": "https://ahmedessyad.github.io/portfolio/",
+    "image": "https://ahmedessyad.github.io/portfolio/images/profile.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nouakchott",
+      "addressCountry": "Mauritania"
+    },
+    "alumniOf": "Supnum",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Elhilal",
+      "url": "https://www.elhilal-dev.com/"
+    },
+    "sameAs": [
+      "https://github.com/ahmedEssyad",
+      "https://www.linkedin.com/in/AhmedEssyad/",
+      "https://x.com/MoEssyad"
+    ],
+    "knowsAbout": [
+      "React", "Node.js", "JavaScript", "OpenAI API", "Full-Stack Development",
+      "AI Integration", "Web Development", "MongoDB", "Express.js"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div id="page-loader">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <div class="loader-text">Loading Portfolio...</div>
+    </div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Navigation -->
+  <nav class="show">
+    <div class="nav-container">
+      <div class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="index-ar.html" class="nav-link">العربية</a></li>
+        <li>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header id="home">
+    <div class="header-content">
+      <h1 class="glitch animate-on-scroll" data-text="Mohamed Essyad">Mohamed Essyad</h1>
+      <div class="terminal-text animate-on-scroll">$ echo "Senior Full-Stack Developer & AI Solutions Architect"</div>
+    </div>
+    <div class="cv-download-container">
+      <div class="cv-download-button">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="terminal-title">install_cv.sh</div>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line">$ <span class="typing-text">curl -O https://cv.mohamed-essyad.com</span></div>
+          <div class="terminal-line progress-line">
+            <div class="progress-text">Downloading...</div>
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+          </div>
+          <div class="terminal-line success-line">Installation complete! <span class="blink">█</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="section-title animate-on-scroll">About Me</h2>
+    <div class="about-content">
+      <div class="about-image card-3d animate-on-scroll">
+        <img src="./images/profile.jpg" alt="Mohamed Essyad profile photo" loading="lazy" width="300" height="300" />
+      </div>
+      <div class="about-text">
+        <p class="animate-on-scroll">
+          Senior Full-Stack Developer with 3+ years of experience building scalable web applications and AI-powered solutions. I specialize in React, Node.js, and modern JavaScript ecosystems, with expertise in integrating OpenAI APIs and payment gateways.
+        </p>
+        <p class="animate-on-scroll">
+          I deliver production-ready applications from concept to deployment, focusing on performance, user experience, and business value. Passionate about creating innovative solutions that solve real-world problems.
+        </p>
+        <div class="bio-item animate-on-scroll">
+          <span class="bio-icon">🌍</span>
+          <span>Based in Nouakchott, Mauritania</span>
+        </div>
+        <div class="bio-item animate-on-scroll">
+          <span class="bio-icon">💼</span>
+          <span>Cofounder and CEO of <a href="https://www.elhilal-dev.com/">Elhilal</a></span>
+        </div>
+        <div class="bio-item animate-on-scroll">
+          <span class="bio-icon">🚀</span>
+          <span>3+ Years Experience | 20+ Projects Delivered</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2 class="section-title animate-on-scroll">Technical Skills & Expertise</h2>
+    <div class="skills-container">
+      <!-- Frontend Mastery -->
+      <div class="skill-category animate-on-scroll">
+        <h3>Frontend Mastery</h3>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>React</span>
+            <span>95%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 95%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>JavaScript</span>
+            <span>90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>CSS/Bootstrap</span>
+            <span>87%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 87%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend Systems -->
+      <div class="skill-category animate-on-scroll">
+        <h3>Backend Systems</h3>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>Node.js/Express</span>
+            <span>90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>Django</span>
+            <span>85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 85%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>API Development</span>
+            <span>92%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 92%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Database Systems -->
+      <div class="skill-category animate-on-scroll">
+        <h3>Database Systems</h3>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>MongoDB</span>
+            <span>90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>MySQL</span>
+            <span>88%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 88%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>PostgreSQL</span>
+            <span>78%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 78%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI & Integration -->
+      <div class="skill-category animate-on-scroll">
+        <h3>AI & Integration</h3>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>OpenAI API</span>
+            <span>90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>Payment Gateways</span>
+            <span>85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 85%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>Docker/Deployment</span>
+            <span>86%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 86%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2 class="section-title animate-on-scroll">Portfolio & Featured Projects</h2>
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-hologram animate-on-scroll">
+        <div class="hologram-frame">
+          <div class="hologram-header">
+            <div class="project-title">E-Commerce Admin Dashboard</div>
+            <div class="project-status online">Live</div>
+          </div>
+          <div class="project-content">
+            <div class="project-image">
+              <div class="hologram-placeholder">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+            </div>
+            <div class="project-description">
+              <p>Production-ready e-commerce admin dashboard with real-time analytics, inventory management, order processing, and comprehensive reporting system.</p>
+              <div class="tech-stack">
+                <span class="tech-item">React</span>
+                <span class="tech-item">Chart.js</span>
+                <span class="tech-item">Material-UI</span>
+                <span class="tech-item">Responsive Design</span>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/ahmedEssyad/admin-dashboard" target="_blank" class="action-button github">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://admin-dashboard-kxlj.vercel.app/" target="_blank" class="action-button demo">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- More projects... (truncated for brevity) -->
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2 class="section-title animate-on-scroll">Get In Touch</h2>
+    <div class="contact-form animate-on-scroll">
+      <form id="contactForm" action="https://formspree.io/f/manedwjq" method="POST">
+        <div class="form-group">
+          <input type="text" id="name" name="name" class="form-control" placeholder=" " required>
+          <label for="name" class="form-label">Your Name</label>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="_replyto" class="form-control" placeholder=" " required>
+          <label for="email" class="form-label">Your Email</label>
+        </div>
+        <div class="form-group">
+          <input type="text" id="subject" name="_subject" class="form-control" placeholder=" " required>
+          <label for="subject" class="form-label">Subject</label>
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" class="form-control" placeholder=" " required></textarea>
+          <label for="message" class="form-label">Your Message</label>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Access Denied Modal -->
+  <div id="accessDeniedModal" class="access-denied-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Access Denied</h3>
+        <span class="modal-close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="error-animation">
+          <div class="error-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <div class="error-message">
+            <div class="glitch-text" data-text="ACCESS DENIED">ACCESS DENIED</div>
+          </div>
+        </div>
+        <div class="terminal-output">
+          <div class="output-line"><span class="prompt">&gt;</span> Connecting to secure server...</div>
+          <div class="output-line"><span class="prompt">&gt;</span> Verifying credentials...</div>
+          <div class="output-line"><span class="prompt">&gt;</span> Authentication failed!</div>
+          <div class="output-line error">Access denied: Insufficient privileges</div>
+          <div class="output-line"><span class="prompt">&gt;</span> Connection terminated</div>
+        </div>
+        <div class="contact-suggestion">
+          <p>Need assistance? Contact our security team.</p>
+          <a href="#contact" class="contact-btn" id="redirectToContact">Contact Support</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Mohamed Essyad | Creative Developer</p>
+    <div class="social-links">
+      <a href="https://github.com/ahmedEssyad" class="social-link" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/AhmedEssyad/" class="social-link" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://x.com/MoEssyad" class="social-link" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://wa.me/22242548647" class="social-link" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="mailto:essyadmo1989@gmail.com" class="social-link" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+    <a href="#home" class="back-to-top" aria-label="Back to top">↑</a>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.min.js" defer></script>
+
+</body>
+</html>

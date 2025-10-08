@@ -1,0 +1,116 @@
+/* Theme Toggle Styles */
+
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--light);
+  color: var(--light);
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1.2rem;
+}
+
+.theme-toggle:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  transform: rotate(180deg);
+}
+
+.theme-toggle i {
+  transition: var(--transition);
+}
+
+/* Light Theme Variables */
+[data-theme="light"] {
+  --primary: #8e44ad;
+  --secondary: #3498db;
+  --dark: #ecf0f1;
+  --light: #2c3e50;
+  --accent: #e74c3c;
+  --accent2: #2ecc71;
+}
+
+[data-theme="light"] body {
+  background-color: #f5f5f5;
+  color: #2c3e50;
+}
+
+[data-theme="light"] nav {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .nav-link {
+  color: #2c3e50;
+}
+
+[data-theme="light"] .nav-link:hover,
+[data-theme="light"] .nav-link.active {
+  background: #8e44ad;
+  color: #fff;
+}
+
+[data-theme="light"] header {
+  background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+}
+
+[data-theme="light"] .glitch {
+  color: #2c3e50;
+}
+
+[data-theme="light"] section {
+  color: #2c3e50;
+}
+
+[data-theme="light"] .skill-category,
+[data-theme="light"] .project-hologram,
+[data-theme="light"] .bio-item {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #2c3e50;
+}
+
+[data-theme="light"] .form-control {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.2);
+  color: #2c3e50;
+}
+
+[data-theme="light"] .form-label {
+  color: #7f8c8d;
+}
+
+[data-theme="light"] footer {
+  background: rgba(255, 255, 255, 0.9);
+  color: #2c3e50;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .modal-content {
+  background: #fff;
+  color: #2c3e50;
+}
+
+[data-theme="light"] .theme-toggle {
+  border-color: #2c3e50;
+  color: #2c3e50;
+}
+
+/* Smooth transition between themes */
+body,
+nav,
+section,
+.skill-category,
+.project-hologram,
+.bio-item,
+.form-control,
+footer,
+.modal-content {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
